@@ -1,17 +1,14 @@
 import argparse
 import pandas as pd
-# from Modules.TEP import TextEhancementProvider
 from Modules.BM import BaseMultimodalTSFModel
 import ast
 import numpy as np
 import os
 from tqdm import tqdm
 from torch.utils.data import Dataset, DataLoader
-import accelerate
 import torch.distributed as dist
 import torch
 
-# os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
 
 stat_dict = {
     "Agriculture": {
@@ -89,11 +86,11 @@ class temp_dataset(Dataset):
 
 def main():
     parser = argparse.ArgumentParser(description="LLM Prediction with Examples")
-    parser.add_argument("--csv_file", type=str, help="Path to the CSV file", default="./reinforced_my_datasets/Time-MMD/Climate/Climate_96_12_train_0.csv")
+    parser.add_argument("--csv_file", type=str, help="Path to the CSV file", default="")
     parser.add_argument("--hist_len", type=int, help="Historical time series length", default=96)
     parser.add_argument("--pred_len", type=int, help="Prediction length", default=12)
     parser.add_argument("--batch_size", type=int, help="Batch size", default=8)
-    parser.add_argument("--save_dir", type=str, help="dir to save dataset", default='./reward_my_datasets/Time-MMD/Climate')
+    parser.add_argument("--save_dir", type=str, help="dir to save dataset", default='')
     parser.add_argument("--text_type", type=str, help="", default='reinforced_text')
     args = parser.parse_args()
 
@@ -105,8 +102,6 @@ def main():
 
     tsf_model = BaseMultimodalTSFModel(args.hist_len, args.pred_len, bm_name="chattime")
 
-    # accelerator = accelerate.Accelerator()
-    # tsf_model, data_loader = accelerator.prepare(tsf_model, data_loader)
 
     all_data_with_reward = {
         'history_series': [],
@@ -115,14 +110,10 @@ def main():
         args.text_type: [],
         'reward1' : []
     }
-    # for history_series, horizon_series, reinforced_texts in tqdm(data_loader, disable=not accelerator.is_local_main_process):
+
     for history_series, horizon_series, texts, prompts in tqdm(data_loader):
         pred_serie = tsf_model.predict(history_series, texts)
 
-        # history_series = accelerator.gather_for_metrics(history_series)
-        # horizon_series = accelerator.gather_for_metrics(horizon_series)
-        # reinforced_texts = accelerator.gather_for_metrics(reinforced_texts)
-        # pred_serie = accelerator.gather_for_metrics(pred_serie)
         
         all_data_with_reward['history_series'].extend(history_series.cpu().numpy().tolist())
         all_data_with_reward['horizon_series'].extend(horizon_series.cpu().numpy().tolist())
@@ -133,13 +124,10 @@ def main():
         reward = -np.mean((pred_serie - horizon_series.cpu().numpy()) ** 2, axis=1)
         all_data_with_reward['reward1'].extend(reward.tolist())
 
-    # if accelerator.is_local_main_process:
     os.makedirs(args.save_dir, exist_ok=True)
     all_data_with_reward = pd.DataFrame(all_data_with_reward)
     all_data_with_reward.to_csv(os.path.join(args.save_dir, os.path.basename(args.csv_file)), index=False)
 
-    # dist.barrier()  # 确保所有进程都停止于此
-    # dist.destroy_process_group()
 
 if __name__ == "__main__":
     main()

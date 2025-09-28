@@ -122,27 +122,22 @@ class MCD_dataset(Dataset):
         self.desc = get_desc(data, self.seq_len, self.pred_len)
         self.tot_len = len(self.df)
     def extract_timestamps(self, data_str):
-        # 定义起始和结束标记
+
         start_marker = "Input data points:"
         end_marker = "Now generate the analysis result in the following format:"
         
-        # 查找起始标记位置
         start_idx = data_str.find(start_marker)
         if start_idx == -1:
             return []
         
-        # 计算数据块起始位置（跳过标记本身）
         start_idx += len(start_marker)
         
-        # 查找结束标记位置
         end_idx = data_str.find(end_marker, start_idx)
         if end_idx == -1:
             return []
         
-        # 提取两个标记之间的文本块
         data_block = data_str[start_idx:end_idx]
         
-        # 使用正则表达式匹配所有时间戳（格式：YYYY-MM-DD）
         timestamp_pattern = r'\b(\d{4}-\d{2}-\d{2})\b'
         timestamps = re.findall(timestamp_pattern, data_block)
     
@@ -191,14 +186,14 @@ class TFHTSDataset(Dataset):
         self.data_name = data_name
         self.text_type = text_type
         self.mean, self.std = stat_dict[self.data_name]["mean"], stat_dict[self.data_name]["std"]
-        # 预处理时间序列数据
+
         ts_data = [eval(ts) for ts in self.df['history_series']]
         pred_data = [eval(pred) for pred in self.df['horizon_series']]
-        # import pdb; pdb.set_trace()
+
         self.ts_data = (np.array(ts_data, dtype=np.float32) - self.mean) / self.std
         self.pred_data = (np.array(pred_data, dtype=np.float32) - self.mean) / self.std
         
-        # 预处理文本数据并提取嵌入
+
         print("Extracting text embeddings...")
         self.text_embeddings = self._extract_text_embeddings()
     

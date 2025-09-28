@@ -1,6 +1,0 @@
-{
-    "experiment_name": "run_11",
-    "tasks":{
-        "1":    ["mtbench_weather_12.sh"]
-    }
-}

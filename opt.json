@@ -1,0 +1,6 @@
+{
+    "experiment_name": "opt9",
+    "tasks":{
+        "1":["Models/TextFusionHTS/opt_mt_finance_48.sh"]
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "process_name": "test_sleep",
+  "total_runtime": 4.042417526245117,
+  "total_runtime_formatted": "00:00:04",
+  "final_log_size_mb": 0.0,
+  "avg_cpu_usage": 0.0,
+  "avg_memory_usage": 7.0,
+  "max_memory_usage": 7.0,
+  "stall_detected": false,
+  "final_timestamp": "2025-09-23T16:00:50.849435",
+  "avg_gpu_load": 100.0,
+  "max_gpu_load": 100.0,
+  "avg_gpu_memory": 74.33514388356896,
+  "max_gpu_memory": 74.33514388356896
+}

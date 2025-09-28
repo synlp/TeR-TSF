@@ -1,0 +1,5 @@
+{
+    "0": ["train_scripts/Energy_96_24.sh", "train_scripts/Energy_96_48.sh"],
+    "5": ["train_scripts/weather_6_6.sh", "train_scripts/weather_7_7.sh"], 
+    "6": ["train_scripts/exchange_96_192.sh", "train_scripts/exchange_96_336.sh"]
+}

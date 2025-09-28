@@ -1,0 +1,28 @@
+{
+  "experiment_info": {
+    "timestamp": "20250923_234201",
+    "total_experiments": 12,
+    "successful_experiments": 9,
+    "failed_experiments": 3,
+    "base_config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false
+    }
+  },
+  "files": {
+    "raw_results": "./performance_experiments_20250923_211608/param_sensitivity/raw_results_20250923_234201.json",
+    "analysis_csv": "./performance_experiments_20250923_211608/param_sensitivity/analysis_results_20250923_234201.csv"
+  },
+  "statistical_analysis": {
+    "gen_num": {
+      "sample_count": 3,
+      "value_range": [
+        

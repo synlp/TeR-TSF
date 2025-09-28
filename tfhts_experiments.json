@@ -1,0 +1,10 @@
+{
+    "(('Data', 'Agriculture'), ('hist_len', 36), ('pred_len', 6))": {
+        "(('epochs', 200), ('iter_idx', 0), ('lr', 0.0001), ('text', 'original_text'), ('time', '001'))": {
+            "best_train_loss": 0.05926166996359825,
+            "best_val_mse": 0.04799914453178644,
+            "test_mse": 0.3326465257323614,
+            "test_mae": 0.4152692391140626
+        }
+    }
+}

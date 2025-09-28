@@ -1,0 +1,377 @@
+[
+  {
+    "exp_id": "gen_num_2_213126",
+    "variable_param": "gen_num",
+    "variable_value": 2,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "gen_num",
+      "variable_value": 2,
+      "exp_id": "gen_num_2_213126"
+    },
+    "success": true,
+    "total_duration": 803.7575161457062,
+    "subprocess_duration": 803.2478413581848,
+    "return_code": 0,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/gen_num_2_213126_stage_stats_20250923_214451.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T21:44:51.236241"
+  },
+  {
+    "exp_id": "gen_num_4_213126",
+    "variable_param": "gen_num",
+    "variable_value": 4,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 4,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "gen_num",
+      "variable_value": 4,
+      "exp_id": "gen_num_4_213126"
+    },
+    "success": true,
+    "total_duration": 1173.4393155574799,
+    "subprocess_duration": 1173.2498636245728,
+    "return_code": 0,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/gen_num_4_213126_stage_stats_20250923_220425.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T22:04:25.700640"
+  },
+  {
+    "exp_id": "gen_num_8_213126",
+    "variable_param": "gen_num",
+    "variable_value": 8,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 8,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "gen_num",
+      "variable_value": 8,
+      "exp_id": "gen_num_8_213126"
+    },
+    "success": true,
+    "total_duration": 1909.9370248317719,
+    "subprocess_duration": 1909.7568793296814,
+    "return_code": 0,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/gen_num_8_213126_stage_stats_20250923_223617.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T22:36:17.536100"
+  },
+  {
+    "exp_id": "batch_size_16_213126",
+    "variable_param": "batch_size",
+    "variable_value": 16,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 16,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "batch_size",
+      "variable_value": 16,
+      "exp_id": "batch_size_16_213126"
+    },
+    "success": true,
+    "total_duration": 248.743150472641,
+    "subprocess_duration": 248.54088234901428,
+    "return_code": 0,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/batch_size_16_213126_stage_stats_20250923_224028.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T22:40:28.110544"
+  },
+  {
+    "exp_id": "batch_size_32_213126",
+    "variable_param": "batch_size",
+    "variable_value": 32,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 32,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "batch_size",
+      "variable_value": 32,
+      "exp_id": "batch_size_32_213126"
+    },
+    "success": true,
+    "total_duration": 433.3331198692322,
+    "subprocess_duration": 433.15556931495667,
+    "return_code": 0,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/batch_size_32_213126_stage_stats_20250923_224743.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T22:47:43.287199"
+  },
+  {
+    "exp_id": "batch_size_64_213126",
+    "variable_param": "batch_size",
+    "variable_value": 64,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "batch_size",
+      "variable_value": 64,
+      "exp_id": "batch_size_64_213126"
+    },
+    "success": true,
+    "total_duration": 802.3564276695251,
+    "subprocess_duration": 802.1367645263672,
+    "return_code": 0,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/batch_size_64_213126_stage_stats_20250923_230106.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T23:01:06.515529"
+  },
+  {
+    "exp_id": "hist_len_36_213126",
+    "variable_param": "hist_len",
+    "variable_value": 36,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 36,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "hist_len",
+      "variable_value": 36,
+      "exp_id": "hist_len_36_213126"
+    },
+    "success": false,
+    "total_duration": 5.0584187507629395,
+    "subprocess_duration": 4.8577916622161865,
+    "return_code": 2,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/hist_len_36_213126_stage_stats_20250923_230112.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T23:01:12.577810",
+    "error": "Unknown error"
+  },
+  {
+    "exp_id": "hist_len_96_213126",
+    "variable_param": "hist_len",
+    "variable_value": 96,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "hist_len",
+      "variable_value": 96,
+      "exp_id": "hist_len_96_213126"
+    },
+    "success": true,
+    "total_duration": 805.8869812488556,
+    "subprocess_duration": 805.7285158634186,
+    "return_code": 0,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/hist_len_96_213126_stage_stats_20250923_231439.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T23:14:39.214116"
+  },
+  {
+    "exp_id": "hist_len_192_213126",
+    "variable_param": "hist_len",
+    "variable_value": 192,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 192,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "hist_len",
+      "variable_value": 192,
+      "exp_id": "hist_len_192_213126"
+    },
+    "success": false,
+    "total_duration": 4.6218671798706055,
+    "subprocess_duration": 4.424703121185303,
+    "return_code": 2,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/hist_len_192_213126_stage_stats_20250923_231445.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T23:14:45.474790",
+    "error": "Unknown error"
+  },
+  {
+    "exp_id": "pred_len_6_213126",
+    "variable_param": "pred_len",
+    "variable_value": 6,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 6,
+      "batch_size": 64,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "pred_len",
+      "variable_value": 6,
+      "exp_id": "pred_len_6_213126"
+    },
+    "success": false,
+    "total_duration": 4.777523756027222,
+    "subprocess_duration": 4.529658794403076,
+    "return_code": 2,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/pred_len_6_213126_stage_stats_20250923_231451.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T23:14:51.204157",
+    "error": "Unknown error"
+  },
+  {
+    "exp_id": "pred_len_12_213126",
+    "variable_param": "pred_len",
+    "variable_value": 12,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "pred_len",
+      "variable_value": 12,
+      "exp_id": "pred_len_12_213126"
+    },
+    "success": true,
+    "total_duration": 801.7084534168243,
+    "subprocess_duration": 801.5056571960449,
+    "return_code": 0,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/pred_len_12_213126_stage_stats_20250923_232813.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T23:28:13.834347"
+  },
+  {
+    "exp_id": "pred_len_24_213126",
+    "variable_param": "pred_len",
+    "variable_value": 24,
+    "config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 24,
+      "batch_size": 64,
+      "gen_num": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false,
+      "variable_param": "pred_len",
+      "variable_value": 24,
+      "exp_id": "pred_len_24_213126"
+    },
+    "success": true,
+    "total_duration": 825.6946530342102,
+    "subprocess_duration": 825.4825205802917,
+    "return_code": 0,
+    "performance_metrics": {
+      "extraction_error": "No columns to parse from file"
+    },
+    "stage_file": "./performance_experiments_20250923_211608/param_sensitivity/performance_data/pred_len_24_213126_stage_stats_20250923_234201.csv",
+    "timeline_file": null,
+    "summary_file": "",
+    "timestamp": "2025-09-23T23:42:01.026148"
+  }
+]

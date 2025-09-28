@@ -1,0 +1,10 @@
+{
+  "gpu_id": "5",
+  "current_index": 1,
+  "status": "running",
+  "tasks": [
+    "train_scripts/weather_6_6.sh",
+    "train_scripts/weather_7_7.sh"
+  ],
+  "error_message": null
+}

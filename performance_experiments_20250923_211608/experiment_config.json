@@ -1,0 +1,19 @@
+{
+    "experiment_timestamp": "2025-09-23T21:16:10+08:00",
+    "base_config": {
+        "data_name": "Energy",
+        "llm_type": "qwen3-1.7b",
+        "tsf_type": "tfhts",
+        "hist_len": 96,
+        "pred_len": 12,
+        "batch_size": 64,
+        "gen_num": 2
+    },
+    "experiment_settings": {
+        "run_stage_analysis": true,
+        "run_param_sensitivity": true,
+        "max_workers": 1,
+        "realtime_output": true,
+        "output_base_dir": "./performance_experiments_20250923_211608"
+    }
+}

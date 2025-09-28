@@ -1,0 +1,158 @@
+{
+  "experiment_info": {
+    "experiment_id": "stage_analysis_Energy_qwen3-1.7b_20250923_211616",
+    "experiment_type": "stage_performance_analysis",
+    "timestamp": "2025-09-23T21:31:23.505984",
+    "base_config": {
+      "data_name": "Energy",
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 96,
+      "pred_len": 12,
+      "batch_size": 64,
+      "gen_num": 2,
+      "lora_rank": 8,
+      "lr": 5e-05,
+      "per_device_train_batch_size": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false
+    }
+  },
+  "stage_execution_results": [
+    {
+      "success": true,
+      "duration": 804.1835417747498,
+      "return_code": 0,
+      "stdout_lines": 71,
+      "stderr_lines": 70,
+      "command": "python prepare_stage.py --data_dir /data2/user2/ter_tsf --data_name Energy --llm_type qwen3-1.7b --tsf_type tfhts --hist_len 96 --pred_len 12 --batch_size 64 --gen_num 2 --iter_idx 0 --llm_path original --exp_time stage_analysis_stage_analysis_Energy_qwen3-1.7b_20250923_211616 --llama_factory_dir llama-factory-main --down_sample 0 --max_batches 1",
+      "stage_name": "data_preparation"
+    },
+    {
+      "success": true,
+      "duration": 56.75752067565918,
+      "return_code": 0,
+      "stdout_lines": 80,
+      "stderr_lines": 466,
+      "command": "python ./Models/TextFusionHTS/train_tfhts.py --data_dir /data2/user2/ter_tsf/qwen3-1.7b/tfhts/Energy/reinforced_data --save_dir /data2/user2/ter_tsf/qwen3-1.7b/tfhts/Energy/saved_models --data_name Energy --hist_len 96 --pred_len 12 --batch_size 32 --text_type original_text --patch_len 16 --stride 8 --epochs 50 --lr 1e-3 --exp_time stage_analysis_stage_analysis_Energy_qwen3-1.7b_20250923_211616 --iter_idx 0",
+      "stage_name": "tfhts_training"
+    },
+    {
+      "stage_name": "dpo_training",
+      "success": true,
+      "duration": 25.025375604629517,
+      "return_code": 0,
+      "simulated": true,
+      "epochs": 2
+    },
+    {
+      "success": false,
+      "duration": 14.898723363876343,
+      "return_code": 1,
+      "stdout_lines": 17,
+      "stderr_lines": 39,
+      "command": "python evaluate.py --data_dir /data2/user2/ter_tsf --data_name Energy --llm_type qwen3-1.7b --tsf_type tfhts --hist_len 96 --pred_len 12 --batch_size 64 --iter_idx 0 --llm_path original --exp_time stage_analysis_stage_analysis_Energy_qwen3-1.7b_20250923_211616 --gen_num 2 --down_sample 0 --dpo_epoch 2 --dpo_lr 5e-05",
+      "error": "\nLoading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]\nLoading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.69it/s]\nLoading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.95it/s]\n\nLoading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]\nLoading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.34it/s]\nLoading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.36it/s]\nLoading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.38it/s]\nLoading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.99it/s]\nLoading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.70it/s]\n\nProcessing texts:   0%|          | 0/64 [00:00<?, ?it/s]\nProcessing texts:   2%|▏         | 1/64 [00:00<00:30,  2.10it/s]\nProcessing texts:   9%|▉         | 6/64 [00:00<00:04, 12.58it/s]\nProcessing texts:  17%|█▋        | 11/64 [00:00<00:02, 20.88it/s]\nProcessing texts:  25%|██▌       | 16/64 [00:00<00:01, 27.27it/s]\nProcessing texts:  33%|███▎      | 21/64 [00:00<00:01, 32.23it/s]\nProcessing texts:  41%|████      | 26/64 [00:01<00:01, 35.05it/s]\nProcessing texts:  48%|████▊     | 31/64 [00:01<00:00, 37.28it/s]\nProcessing texts:  56%|█████▋    | 36/64 [00:01<00:00, 39.54it/s]\nProcessing texts:  64%|██████▍   | 41/64 [00:01<00:00, 41.22it/s]\nProcessing texts:  72%|███████▏  | 46/64 [00:01<00:00, 42.41it/s]\nProcessing texts:  80%|███████▉  | 51/64 [00:01<00:00, 43.25it/s]\nProcessing texts:  88%|████████▊ | 56/64 [00:01<00:00, 43.81it/s]\nProcessing texts:  95%|█████████▌| 61/64 [00:01<00:00, 44.23it/s]\nProcessing texts: 100%|██████████| 64/64 [00:01<00:00, 33.69it/s]\n\n执行评估:   0%|          | 0/1 [00:00<?, ?it/s]\n执行评估: 100%|██████████| 1/1 [00:02<00:00,  2.72s/it]\n执行评估: 100%|██████████| 1/1 [00:02<00:00,  2.84s/it]\nTraceback (most recent call last):\n  File \"/home/user2/projects/TeR_TSF/evaluate.py\", line 351, in <module>\n    main()\n  File \"/home/user2/projects/TeR_TSF/evaluate.py\", line 337, in main\n    gen_reinforced_text(args, tep, flag=\"test\", trained=True)\n  File \"/home/user2/projects/TeR_TSF/prepare_stage.py\", line 341, in gen_reinforced_text\n    _generate_and_save_texts(data_loader, tep, paths['reinforced_data_file'], args.max_batches)\nAttributeError: 'Namespace' object has no attribute 'max_batches'",
+      "stage_name": "evaluation"
+    }
+  ],
+  "performance_monitoring_summary": {
+    "experiment_info": {
+      "name": "stage_analysis_Energy_qwen3-1.7b_20250923_211616",
+      "timestamp": "20250923_213123",
+      "total_stages": 4,
+      "total_duration_seconds": 904.9995503425598,
+      "total_duration_minutes": 15.083325839042663
+    },
+    "performance_summary": {
+      "avg_cpu_usage_percent": 9.6875,
+      "peak_memory_usage_gb": 163.02061080932617,
+      "total_memory_delta_gb": -0.3377532958984375,
+      "peak_gpu_memory_mb": 0.0,
+      "total_gpu_memory_delta_mb": 0.0
+    },
+    "stage_breakdown": {
+      "durations": {
+        "sum": {
+          "data_preparation_full": 805.5522587299347,
+          "dpo_training": 25.685848474502563,
+          "evaluation": 16.14252781867981,
+          "tfhts_training": 57.61891531944275
+        },
+        "mean": {
+          "data_preparation_full": 805.5522587299347,
+          "dpo_training": 25.685848474502563,
+          "evaluation": 16.14252781867981,
+          "tfhts_training": 57.61891531944275
+        },
+        "std": {
+          "data_preparation_full": NaN,
+          "dpo_training": NaN,
+          "evaluation": NaN,
+          "tfhts_training": NaN
+        }
+      },
+      "memory_usage": {
+        "max": {
+          "data_preparation_full": 163.02061080932617,
+          "dpo_training": 162.85199356079102,
+          "evaluation": 162.16634368896484,
+          "tfhts_training": 162.79214477539062
+        },
+        "mean": {
+          "data_preparation_full": 163.02061080932617,
+          "dpo_training": 162.85199356079102,
+          "evaluation": 162.16634368896484,
+          "tfhts_training": 162.79214477539062
+        },
+        "std": {
+          "data_preparation_full": NaN,
+          "dpo_training": NaN,
+          "evaluation": NaN,
+          "tfhts_training": NaN
+        }
+      },
+      "cpu_usage": {
+        "mean": {
+          "data_preparation_full": 12.95,
+          "dpo_training": 7.0,
+          "evaluation": 10.65,
+          "tfhts_training": 8.15
+        },
+        "std": {
+          "data_preparation_full": NaN,
+          "dpo_training": NaN,
+          "evaluation": NaN,
+          "tfhts_training": NaN
+        }
+      }
+    },
+    "bottleneck_analysis": {
+      "slowest_stage": "data_preparation_full",
+      "most_memory_intensive_stage": "data_preparation_full",
+      "highest_cpu_usage_stage": "data_preparation_full"
+    },
+    "efficiency_metrics": {
+      "time_per_stage_seconds": 226.24988758563995,
+      "memory_efficiency_gb_per_second": 0.18013336111340578,
+      "cpu_efficiency_percent_per_second": 0.010704425208093301
+    }
+  },
+  "detailed_analysis": {
+    "total_experiment_duration": 900.8651614189148,
+    "successful_stages": 3,
+    "failed_stages": 1,
+    "stage_duration_breakdown": {
+      "data_preparation": 804.1835417747498,
+      "tfhts_training": 56.75752067565918,
+      "dpo_training": 25.025375604629517,
+      "evaluation": 14.898723363876343
+    }
+  },
+  "bottleneck_analysis": {
+    "slowest_stage": "data_preparation_full",
+    "most_memory_intensive_stage": "data_preparation_full",
+    "highest_cpu_usage_stage": "data_preparation_full",
+    "stage_performance_summary": {
+      

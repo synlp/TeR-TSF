@@ -1,0 +1,91 @@
+{
+  "experiment_info": {
+    "timestamp": "20250924_143205",
+    "experiment_type": "efficiency_experiment",
+    "data_name": "Agriculture",
+    "test_pred_lengths": [
+      6,
+      12,
+      18
+    ],
+    "batch_size": 16,
+    "total_experiments": 3,
+    "successful_experiments": 3,
+    "base_config": {
+      "llm_type": "qwen3-1.7b",
+      "tsf_type": "tfhts",
+      "hist_len": 36,
+      "gen_num": 2,
+      "lora_rank": 8,
+      "lr": 5e-05,
+      "per_device_train_batch_size": 2,
+      "llama_factory_dir": "llama-factory-main",
+      "down_sample": 0,
+      "disable_text_quality_reward": false
+    },
+    "experiment_config": {
+      "data_name": "Agriculture",
+      "batch_size": 16,
+      "pred_len": [
+        6,
+        12,
+        18
+      ]
+    }
+  },
+  "files": {
+    "raw_results": "./efficiency_results/efficiency_results_20250924_143205.json",
+    "analysis_csv": "./efficiency_results/efficiency_analysis_20250924_143205.csv"
+  },
+  "efficiency_analysis": {
+    "pred_len_analysis": {
+      "pred_6": {
+        "total_duration": 184.35948848724365,
+        "data_prep_duration": 154.62530708312988,
+        "dpo_duration": 27.113001346588135,
+        "data_prep_ratio": 0.8387162947342894,
+        "dpo_ratio": 0.14706593931813908
+      },
+      "pred_12": {
+        "total_duration": 187.5031294822693,
+        "data_prep_duration": 159.03186178207397,
+        "dpo_duration": 25.42174768447876,
+        "data_prep_ratio": 0.8481557732993058,
+        "dpo_ratio": 0.1355803914029216
+      },
+      "pred_18": {
+        "total_duration": 186.6615972518921,
+        "data_prep_duration": 159.60786294937134,
+        "dpo_duration": 24.63678812980652,
+        "data_prep_ratio": 0.8550653444478306,
+        "dpo_ratio": 0.13198637798304166
+      }
+    },
+    "overall_stats": {
+      "total_duration_range": [
+        184.35948848724365,
+        187.5031294822693
+      ],
+      "avg_total_duration": 186.174738407135,
+      "avg_data_prep_duration": 157.7550106048584,
+      "avg_dpo_duration": 25.723845720291138,
+      "data_prep_avg_ratio": 0.8473124708271419,
+      "dpo_avg_ratio": 0.13821090290136748
+    },
+    "efficiency_ranking": {
+      "fastest": {
+        "pred_len": 6,
+        "duration": 184.35948848724365
+      },
+      "slowest": {
+        "pred_len": 12,
+        "duration": 187.5031294822693
+      }
+    }
+  },
+  "summary": {
+    "fastest_pred_len": 6,
+    "slowest_pred_len": 12,
+    "efficiency_trend": "Duration increases with prediction length"
+  }
+}

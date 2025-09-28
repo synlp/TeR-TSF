@@ -1,0 +1,66 @@
+{
+  "experiment_info": {
+    "name": "efficiency_Energy_pred12_20250924_131637",
+    "timestamp": "20250924_133128",
+    "total_stages": 2,
+    "total_duration_seconds": 888.3519248962402,
+    "total_duration_minutes": 14.805865414937337
+  },
+  "performance_summary": {
+    "avg_cpu_usage_percent": 8.925,
+    "peak_memory_usage_gb": 145.26088333129883,
+    "total_memory_delta_gb": -0.09574127197265625,
+    "peak_gpu_memory_mb": 0.0,
+    "total_gpu_memory_delta_mb": 0.0
+  },
+  "stage_breakdown": {
+    "durations": {
+      "sum": {
+        "data_preparation": 803.9997425079346,
+        "dpo_training": 84.35218238830566
+      },
+      "mean": {
+        "data_preparation": 803.9997425079346,
+        "dpo_training": 84.35218238830566
+      },
+      "std": {
+        "data_preparation": NaN,
+        "dpo_training": NaN
+      }
+    },
+    "memory_usage": {
+      "max": {
+        "data_preparation": 145.26088333129883,
+        "dpo_training": 144.24335479736328
+      },
+      "mean": {
+        "data_preparation": 145.26088333129883,
+        "dpo_training": 144.24335479736328
+      },
+      "std": {
+        "data_preparation": NaN,
+        "dpo_training": NaN
+      }
+    },
+    "cpu_usage": {
+      "mean": {
+        "data_preparation": 9.600000000000001,
+        "dpo_training": 8.25
+      },
+      "std": {
+        "data_preparation": NaN,
+        "dpo_training": NaN
+      }
+    }
+  },
+  "bottleneck_analysis": {
+    "slowest_stage": "data_preparation",
+    "most_memory_intensive_stage": "data_preparation",
+    "highest_cpu_usage_stage": "data_preparation"
+  },
+  "efficiency_metrics": {
+    "time_per_stage_seconds": 444.1759624481201,
+    "memory_efficiency_gb_per_second": 0.16351727199585384,
+    "cpu_efficiency_percent_per_second": 0.01004669405207001
+  }
+}

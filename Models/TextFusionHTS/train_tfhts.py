@@ -274,7 +274,6 @@ def test(model, test_loader, device, dataset, max_batch=-1):
             
 
             if max_batch > 0 and batch_count >= max_batch:
-                print(f"达到最大批次限制 {max_batch}，提前结束测试")
                 break
 
     avg_mse = total_squared_error / total_samples if total_samples > 0 else 0.0
@@ -322,9 +321,9 @@ def main():
 
     if args.iter_idx == 0 and args.text_type == "original_text":
 
-        train_data_path = os.path.join("/data2/user2/ter_tsf/processed_data", f"{args.data_name}_{args.hist_len}_{args.pred_len}_train.csv")
-        val_data_path = os.path.join("/data2/user2/ter_tsf/processed_data", f"{args.data_name}_{args.hist_len}_{args.pred_len}_val.csv")
-        test_data_path = os.path.join("/data2/user2/ter_tsf/processed_data", f"{args.data_name}_{args.hist_len}_{args.pred_len}_test.csv")
+        train_data_path = os.path.join("./processed_data", f"{args.data_name}_{args.hist_len}_{args.pred_len}_train.csv")
+        val_data_path = os.path.join("./processed_data", f"{args.data_name}_{args.hist_len}_{args.pred_len}_val.csv")
+        test_data_path = os.path.join("./processed_data", f"{args.data_name}_{args.hist_len}_{args.pred_len}_test.csv")
     else:
 
         train_data_path = os.path.join(args.data_dir, "train", f"iter{args.iter_idx}", f"{args.data_name}_{args.hist_len}_{args.pred_len}_gen0_{args.exp_time}.csv")
